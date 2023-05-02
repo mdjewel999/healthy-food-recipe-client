@@ -4,8 +4,27 @@ import Home from "../pages/Home/Home/Home";
 import Category from "../pages/Home/Category/Category";
 import RecipeLayout from "../layout/RecipeLayout";
 import RecipeDetails from "../pages/RecipeDetails/RecipeDetails";
+// import LoginLayout from "../layout/LoginLayout";
+// import Login from "../Login/Login/Login";
+// import Register from "../Login/Register/Register";
 
 const router = createBrowserRouter([
+  // {
+  //   path: "/",
+  //   element: <LoginLayout></LoginLayout>,
+  //   children: [
+  //     {
+  //     path:'login',
+  //     element:<Login></Login>,
+  //   },
+  //   {
+  //     path:'register',
+  //     element:<Register></Register>
+  //   },
+   
+  // ],
+  // },
+
   {
     path: "/",
     element: <Main></Main>,
@@ -21,6 +40,7 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/categories/${params.id}`),
       },
+      
     ],
   },
   {
