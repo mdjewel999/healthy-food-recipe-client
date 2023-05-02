@@ -59,7 +59,7 @@ const RecipeCard = ({ recipe }) => {
                   <span className="ms-2">{rating?.number}</span>
                 </div>
                 <div>
-                  <Button variant="primary">View Details</Button>
+                  <Button variant="primary">View Recipes</Button>
                 </div>
               </Card.Footer>
 
