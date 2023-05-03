@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
-const navigate =useNavigate()
+  const { signIn, signInWithGoogle  } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log("login page location", location);
+  const from = location.state?.from?.pathname || "/category/0";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -19,53 +22,69 @@ const navigate =useNavigate()
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        navigate('/category/0'); 
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
-
+ // handle Sign In With Google
+  const handleSignInWithGoogle = () => {
+    signInWithGoogle()
+      .then(() => {
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  
 
 
   return (
     <Container className="w-25 mx-auto">
-    <h2>Please Login</h2>
-    <Form onSubmit={handleLogin}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control
-          type="email"
-          name="email"
-          placeholder="Enter email"
-          required
-        />
-      </Form.Group>
+      <h2>Please Login</h2>
+      <Form onSubmit={handleLogin}>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            type="email"
+            name="email"
+            placeholder="Enter email"
+            required
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          type="password"
-          name="password"
-          placeholder="Password"
-          required
-        />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Login
-      </Button>
-      <br />
-      <Form.Text className="text-secondary">
-        Don't Have Account?<Link to="/register">Register</Link>
-      </Form.Text>
-      <Form.Text className="text-success"></Form.Text>
-      <Form.Text className="text-danger"></Form.Text>
-    </Form>
-  </Container>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+          <Form.Check type="checkbox" label="Check me out" />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Login
+        </Button>
+        <br />
+        <Form.Text className="text-secondary">
+          Don't Have Account?<Link to="/register">Register</Link>
+        </Form.Text>
+        <Form.Text className="text-success"></Form.Text>
+        <Form.Text className="text-danger"></Form.Text>
+      </Form>
+      <div>
+        <Button variant="info" onClick={handleSignInWithGoogle}>
+          Google Sign-in
+        </Button>{" "}
+        <Button variant="info">GitHub Sign-in</Button>{" "}
+      </div>
+    </Container>
   );
 };
 
