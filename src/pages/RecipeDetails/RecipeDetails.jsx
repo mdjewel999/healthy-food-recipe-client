@@ -5,7 +5,7 @@ import { FaArrowLeft } from "react-icons/fa";
 
 const RecipeDetails = () => {
   const recipe = useLoaderData();
-  const { _id, title, details, image_url, category_id } = recipe;
+  const { _id, title, details, image_url, category_id,author } = recipe;
 
 
   return (
@@ -13,11 +13,11 @@ const RecipeDetails = () => {
       <Card>
         <Card.Img variant="top" src={image_url} />
         <Card.Body>
-          <Card.Title>{title}</Card.Title>
+          <Card.Title>Name: {author?.name}</Card.Title>
           <Card.Text>{details}</Card.Text>
           <Link to={`/category/${category_id}`}>
             <Button variant="primary">
-              <FaArrowLeft></FaArrowLeft> All recipe in this category
+              <FaArrowLeft></FaArrowLeft> All Recipe
             </Button>
           </Link>
         </Card.Body>

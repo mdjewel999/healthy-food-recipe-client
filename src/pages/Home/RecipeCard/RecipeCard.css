@@ -22,3 +22,7 @@
   .author-name-overlay:hover {
     opacity: 1;
   }
+  .btn-view{
+    width: 200px;
+    height: 40px;
+  }

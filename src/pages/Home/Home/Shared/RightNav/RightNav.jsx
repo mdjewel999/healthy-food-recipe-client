@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './RightNav.css'
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -15,10 +15,10 @@ const RightNav = () => {
 
   return (
     <div>
-      <h2>All Chef</h2>
+      <h2 className='All_chef'>All Chef Name</h2>
       <div className="ps-4">
         {categories.map((category) => (
-          <p key={category.id}>
+          <p key={category.id} className='chef_name'>
             <Link
               to={`/category/${category.id}`}
               className="text-decoration-none text-black"
