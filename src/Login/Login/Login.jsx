@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
-  const { signIn, signInWithGoogle  } = useContext(AuthContext);
+  const { signIn, signInWithGoogle, signInWithGithub  } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log("login page location", location);
@@ -40,6 +40,16 @@ const Login = () => {
       });
   };
   
+  //handle Sign In With Github
+  const handleSignInWithGithub = () => {
+    signInWithGithub()
+      .then(() => {
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
 
   return (
@@ -82,7 +92,7 @@ const Login = () => {
         <Button variant="info" onClick={handleSignInWithGoogle}>
           Google Sign-in
         </Button>{" "}
-        <Button variant="info">GitHub Sign-in</Button>{" "}
+        <Button variant="info" onClick={handleSignInWithGithub}>GitHub Sign-in</Button>{" "}
       </div>
     </Container>
   );

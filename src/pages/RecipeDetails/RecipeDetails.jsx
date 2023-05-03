@@ -1,11 +1,13 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { Button, Card } from "react-bootstrap";
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft } from "react-icons/fa";
 
 const RecipeDetails = () => {
   const recipe = useLoaderData();
   const { _id, title, details, image_url, category_id } = recipe;
+
+
   return (
     <div className="mt-4">
       <Card>
@@ -15,7 +17,7 @@ const RecipeDetails = () => {
           <Card.Text>{details}</Card.Text>
           <Link to={`/category/${category_id}`}>
             <Button variant="primary">
-            <FaArrowLeft></FaArrowLeft> All recipe in this category
+              <FaArrowLeft></FaArrowLeft> All recipe in this category
             </Button>
           </Link>
         </Card.Body>

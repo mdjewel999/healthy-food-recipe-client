@@ -1,25 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Card, Col, Image, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import moment from "moment/moment";
 import Rating from "react-rating";
-// import { FaEye, FaRegBookmark, FaRegStar, FaShareAlt, FaStar, FaStarHalf } from "react-icons/fa";
+import './RecipeCard.css';
 
 const RecipeCard = ({ recipe }) => {
   const { _id, title, details, image_url, author, rating, total_view } = recipe;
+  
+
+  const [showAuthorName, setShowAuthorName] = useState(false);
+  const handleMouseEnter = () => setShowAuthorName(true);
+  const handleMouseLeave = () => setShowAuthorName(false);
 
   return (
     <Row xs={1} md={2} className="g-4 m-4">
       {Array.from({ length: 2 }).map((_, idx) => (
-        <Col>
+        <Col key={idx}>
           <Card>
             <Card.Header className="d-flex align-items-center">
-              <Image
-                style={{ height: "40px" }}
-                src={author.img}
-                roundedCircle
-              />
-              <div className="ps-2 d-flex ">
+              <div
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Image
+                  style={{ height: "40px" }}
+                  src={author.img}
+                  roundedCircle
+                />
+                {showAuthorName && (
+                  <div className="author-name-overlay">
+                    <p>{author?.name}</p>
+                  </div>
+                )}
+              </div>
+              <div className="ps-2 d-flex">
                 <div>
                   <p className="mb-0 ps-2">{author?.name}</p>
                 </div>
@@ -31,9 +46,7 @@ const RecipeCard = ({ recipe }) => {
                   </p>
                 </div>
               </div>
-              <div>
-                {/* <FaRegBookmark></FaRegBookmark> <FaShareAlt></FaShareAlt> */}
-              </div>
+              <div>{/* icons */}</div>
             </Card.Header>
             <Card.Img variant="top" src={image_url} />
             <Card.Body>
@@ -62,7 +75,6 @@ const RecipeCard = ({ recipe }) => {
                   <Button variant="primary">View Recipes</Button>
                 </div>
               </Card.Footer>
-
             </Card.Body>
           </Card>
         </Col>

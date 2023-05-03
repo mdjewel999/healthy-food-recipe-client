@@ -3,10 +3,9 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
+
 const Register = () => {
-
 const {createUser} = useContext(AuthContext);
-
 const handleRegister = (event) => {
   event.preventDefault();
   const form = event.target;
@@ -25,6 +24,8 @@ const handleRegister = (event) => {
       console.log(error);
     });
 };
+
+
 
 
   return (
