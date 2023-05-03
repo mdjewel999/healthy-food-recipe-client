@@ -1,20 +1,22 @@
 .All_chef{
-    border: 2px solid rgb(55, 7, 227);
+    border: 2px solid rgb(85, 54, 198);
     margin-top: 30px;
     text-align: center;
-    background-color: rgb(43, 73, 226);
+    background-color: #0B5ED7;
     border-radius: 10px;
     padding: 20px;
+    color: white;
 }
 .chef_name{
-    border: 2px solid rgb(55, 7, 227);
+    border: 2px solid #0B5ED7;
     text-align: center;
-    background-color: rgb(43, 73, 226);
+    background-color: #0B5ED7;
     border-radius: 10px;
     padding: 10px;
     font-size: 25px;
     font-weight: bold;
+    color: white;
 }
 .chef_name:hover{
-    background-color: aquamarine;
+    background-color: rgb(181, 214, 203);
 }

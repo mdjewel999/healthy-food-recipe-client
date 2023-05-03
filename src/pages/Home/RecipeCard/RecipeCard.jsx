@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "./RecipeCard.css";
 import "@smastrom/react-rating/style.css";
+import { FaEye } from "react-icons/fa";
 
 const RecipeCard = ({ recipe }) => {
   const {
@@ -24,7 +25,7 @@ const RecipeCard = ({ recipe }) => {
     rating,
     experience,
     thumbnail_url,
-    img,
+    total_view,
   } = recipe;
 
   const [showAuthorName, setShowAuthorName] = useState(false);
@@ -100,7 +101,7 @@ const RecipeCard = ({ recipe }) => {
     //     </Card>
     //   </Col>
     // </Row>
-    <Card>
+    <Card className="mt-4">
       <Card.Header className="d-flex align-items-center">
         <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <Image style={{ height: "40px" }} src={author.img} roundedCircle />
@@ -144,9 +145,9 @@ const RecipeCard = ({ recipe }) => {
             />
             <span className="ms-2">{rating?.number}</span>
           </div>
-            <div>
-
-            </div>
+          <div className="total_view">
+          <FaEye></FaEye> {total_view}
+        </div>
           <div>
             <Button
               variant="primary"
@@ -176,11 +177,7 @@ const RecipeCard = ({ recipe }) => {
                         </ListGroup>
                       </Card.Text>
                     </Card.Body>
-                    <Card.Footer>
-                      <small className="text-muted">
-                        Last updated 3 mins ago
-                      </small>
-                    </Card.Footer>
+                   
                   </Card>
 
                   <Card>
@@ -194,11 +191,7 @@ const RecipeCard = ({ recipe }) => {
                         height action.
                       </Card.Text>
                     </Card.Body>
-                    <Card.Footer>
-                      <small className="text-muted">
-                        Last updated 3 mins ago
-                      </small>
-                    </Card.Footer>
+                   
                   </Card>
                 </CardGroup>
               </Modal.Body>

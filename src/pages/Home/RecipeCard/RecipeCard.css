@@ -7,8 +7,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(48, 92, 174, 0.5);
-    color: rgb(9, 19, 222);
+    background-color: rgba(100, 131, 188, 0.5);
+    color: rgb(249, 250, 252);
     font-size: 40px;
     font-weight: bold;
     opacity: 0;
@@ -26,3 +26,9 @@
     width: 200px;
     height: 40px;
   }
+.total_view{
+  margin-right: 100px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7px;
+}

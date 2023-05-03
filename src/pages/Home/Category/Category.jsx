@@ -8,7 +8,7 @@ const {id} = useParams();
 const categoryRecipe= useLoaderData();
     return (
         <div>
-            <h2>This Category: {categoryRecipe.length}</h2>
+            {/* <h2>This Category: {categoryRecipe.length}</h2> */}
             {
                 categoryRecipe.map(recipe => <RecipeCard
                  key={recipe._id}
