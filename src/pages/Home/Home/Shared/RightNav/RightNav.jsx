@@ -7,7 +7,7 @@ const RightNav = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/categories")
+    fetch("https://healthy-food-recipe-server-mdjewel999.vercel.app/categories")
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((error) => console.log(error));

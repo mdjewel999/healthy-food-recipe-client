@@ -36,6 +36,7 @@ const handleLogOut =() =>{
             </Nav>
             <Nav>
               {user && (
+                
                 <img className='rounded person'  src={user?.photoURL} alt="" />
                 // <FaUserCircle className='person' style={{ fontSize: "2rem" }}></FaUserCircle>
               )}

@@ -13,7 +13,7 @@ const Qustion = () => {
             Qustion And Answer <hr />
           </h1>
           <Card.Body>
-            <Card.Title className="p-2">
+            <Card.Title className="p-2 bg-danger rounded text-white">
               01. Tell us the differences between uncontrolled and controlled
               components. ?{" "}
             </Card.Title>
@@ -50,7 +50,7 @@ const Qustion = () => {
      <div>
         <Card>
           <Card.Body>
-            <Card.Title className="p-2">
+            <Card.Title className="p-2 bg-danger rounded text-white">
               {" "}
               02. How to validate React props using PropTypes ?{" "}
             </Card.Title>
@@ -72,7 +72,7 @@ const Qustion = () => {
      <div>
         <Card>
           <Card.Body>
-            <Card.Title className="p-2">
+            <Card.Title className="p-2 bg-danger rounded text-white">
               03.Tell us the difference between nodejs and express js ?{" "}
             </Card.Title>
             <Card.Text className="p-2">
@@ -105,7 +105,7 @@ const Qustion = () => {
     <div>
         <Card>
           <Card.Body>
-            <Card.Title className="p-2">
+            <Card.Title className="p-2 bg-danger rounded text-white">
               04. What is a custom hook, and why will you create a custom hook?{" "}
             </Card.Title>
             <Card.Text className="p-2">

@@ -41,14 +41,14 @@ const router = createBrowserRouter([
       // {
       //   path: "/",
       //   element: <Category></Category>,
-      //   loader: () => fetch('http://localhost:5000/recipe')
+      //   loader: () => fetch('https://healthy-food-recipe-server-mdjewel999.vercel.app/recipe')
       // },
       {
         path: ":id",
         element: <Category></Category>,
         errorElement:<ErrorPage></ErrorPage>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/categories/${params.id}`),
+          fetch(`https://healthy-food-recipe-server-mdjewel999.vercel.app/categories/${params.id}`),
       },
     ],
   },
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
         path: ":id",
         element: <PrivateRoute><RecipeDetails></RecipeDetails></PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/recipe/${params.id}`),
+          fetch(`https://healthy-food-recipe-server-mdjewel999.vercel.app/recipe/${params.id}`),
       },
     ],
   },
