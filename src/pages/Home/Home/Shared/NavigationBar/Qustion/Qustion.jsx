@@ -1,7 +1,9 @@
+
 import React from "react";
 import "./Qustion.css";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+
 const Qustion = () => {
   return (
     <div className="container">
@@ -45,7 +47,7 @@ const Qustion = () => {
         <br />
       </div>
 
-      <div>
+     <div>
         <Card>
           <Card.Body>
             <Card.Title className="p-2">
@@ -65,8 +67,9 @@ const Qustion = () => {
           </Card.Body>
         </Card>
         <br />
-      </div>
-      <div>
+      </div> 
+
+     <div>
         <Card>
           <Card.Body>
             <Card.Title className="p-2">
@@ -97,8 +100,9 @@ const Qustion = () => {
           </Card.Body>
         </Card>
         <br />
-      </div>
-      <div>
+      </div> 
+
+    <div>
         <Card>
           <Card.Body>
             <Card.Title className="p-2">
@@ -128,7 +132,8 @@ const Qustion = () => {
             </Card.Text>
           </Card.Body>
         </Card>
-      </div>
+      </div> 
+
       <div className="qa_btn">
         <Link to="/" className="back-btn">
           Back to homepage
