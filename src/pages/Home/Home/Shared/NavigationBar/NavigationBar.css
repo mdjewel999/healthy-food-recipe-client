@@ -29,9 +29,13 @@
 }
 .person{
     color: #A52A2A;
-    font-size: 20px;
     margin-right: 10px;
-    margin-top: 7px;
+    margin-top: 2px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+
 }
 .btn_login:hover{
     background-color: #DFA756;

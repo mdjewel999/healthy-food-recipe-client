@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+  const [passwordError, setPasswordError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   const { signIn, signInWithGoogle, signInWithGithub  } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -18,11 +20,18 @@ const Login = () => {
 
     console.log(email, password);
 
+    if (password.length < 6) {
+      setPasswordError("Password should be at least 6 characters long.");
+      return;
+    }
+
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        setSuccessMessage("Logged in successfully!");
         navigate(from, { replace: true });
+        form.reset()
       })
       .catch((error) => {
         console.log(error);
@@ -33,6 +42,7 @@ const Login = () => {
   const handleSignInWithGoogle = () => {
     signInWithGoogle()
       .then(() => {
+        setSuccessMessage("Logged in successfully!");
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -44,6 +54,7 @@ const Login = () => {
   const handleSignInWithGithub = () => {
     signInWithGithub()
       .then(() => {
+        setSuccessMessage("Logged in successfully!");
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -85,8 +96,8 @@ const Login = () => {
         <Form.Text className="text-secondary">
           Don't Have Account?<Link to="/register">Register</Link>
         </Form.Text>
-        <Form.Text className="text-success"></Form.Text>
-        <Form.Text className="text-danger"></Form.Text>
+        <Form.Text className="text-success">{successMessage}</Form.Text>
+        <Form.Text className="text-danger">{passwordError}</Form.Text>
       </Form>
       <div>
         <Button variant="info" onClick={handleSignInWithGoogle}>

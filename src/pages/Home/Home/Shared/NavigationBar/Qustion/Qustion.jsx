@@ -1,5 +1,5 @@
 import React from "react";
-import './Qustion.css'
+import "./Qustion.css";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 const Qustion = () => {
@@ -12,26 +12,33 @@ const Qustion = () => {
           </h1>
           <Card.Body>
             <Card.Title className="p-2">
-              01. When should you use context API?{" "}
+              01. Tell us the differences between uncontrolled and controlled
+              components. ?{" "}
             </Card.Title>
             <Card.Text className="p-2">
-              The React Context API is a powerful tool for managing state that
-              needs to be shared across multiple components in a React
-              application. When you have a large number of components that need
-              access to the same data: Instead of passing props down the
-              component tree, the Context API allows you to provide a
-              centralized way of accessing that data. When you have deeply
-              nested components: If you have a complex component tree, passing
-              props down to all the components can become cumbersome. In this
-              case, the Context API can simplify the process by providing a way
-              to access the data without having to pass it through all the
-              intermediate components. When you need to manage global state: If
-              you have data that needs to be accessed by multiple components
-              across your application, the Context API can be a good option for
-              managing that data. When you need to provide a theme or
-              configuration to your components: The Context API can be used to
-              provide a way to pass down a theme or configuration to all the
-              components in your application.
+              In React, forms can be implemented using either controlled
+              components or uncontrolled components. The main differences
+              between these two approaches are: Controlled Components: In a
+              controlled component, the form data is handled by React component
+              state. The state is updated in response to changes in the form's
+              input elements. Thus, React has complete control over the form's
+              data. To implement a controlled component, each input element must
+              have a corresponding onChange event handler that updates the
+              state. Uncontrolled Components: In an uncontrolled component, the
+              form data is handled by the form's DOM nodes. The data is accessed
+              using JavaScript and not React. In this approach, we can use the
+              ref attribute to get the value of the form's input elements. This
+              means that React doesn't have any control over the form's data. In
+              summary, the key differences between controlled and uncontrolled
+              components are: In controlled components, React manages the state
+              and updates the form's input elements. In uncontrolled components,
+              the form data is managed by the DOM nodes. In controlled
+              components, the form's data can be validated and manipulated
+              before it is submitted. In uncontrolled components, the data must
+              be validated and manipulated after it is submitted. Controlled
+              components can make it easier to implement complex forms, but can
+              be more verbose. Uncontrolled components are usually simpler to
+              implement, but can be harder to maintain.
             </Card.Text>
           </Card.Body>
         </Card>
@@ -43,15 +50,17 @@ const Qustion = () => {
           <Card.Body>
             <Card.Title className="p-2">
               {" "}
-              02. What is a custom hook?{" "}
+              02. How to validate React props using PropTypes ?{" "}
             </Card.Title>
             <Card.Text className="p-2">
-              A custom hook is a JavaScript function that uses React's built-in
-              hooks to provide some functionality to a React component. Custom
-              hooks allow you to extract and reuse stateful logic from a
-              component, making your code more modular and reusable. They are
-              named with the prefix "use" to indicate that they are a hook and
-              can be called from other hooks, components, or other custom hooks.
+              PropTypes is a useful library that allows you to validate the type
+              and shape of the props that are passed to your React components.
+              It is a built-in library in React that enables you to check the
+              type of props that you pass to a component, thus helping you to
+              catch potential bugs earlier. In summary, PropTypes is a useful
+              tool that enables you to validate the type and shape of props
+              passed to your components. By using PropTypes, you can catch
+              potential errors earlier and reduce the risk of bugs in your code.
             </Card.Text>
           </Card.Body>
         </Card>
@@ -60,15 +69,30 @@ const Qustion = () => {
       <div>
         <Card>
           <Card.Body>
-            <Card.Title className="p-2">03.What is useRef? </Card.Title>
+            <Card.Title className="p-2">
+              03.Tell us the difference between nodejs and express js ?{" "}
+            </Card.Title>
             <Card.Text className="p-2">
-              useRef is a hook provided by React that returns a mutable ref
-              object whose .current property can be set to hold any value. This
-              hook is commonly used to access and modify the properties of HTML
-              elements, or to keep track of values that persist across component
-              re-renders, without causing a re-render when the value changes.
-              The .current property of the ref can be updated directly, and any
-              change to it will not trigger a re-render of the component.
+              Node.js and Express.js are two popular technologies used in web
+              development, but they serve different purposes. Node.js is a
+              server-side platform that allows developers to build server-side
+              applications using JavaScript. It provides a runtime environment
+              for executing JavaScript code outside of a web browser, allowing
+              developers to build scalable and high-performance web
+              applications. Node.js includes a set of built-in modules that
+              provide basic functionality such as file system access,
+              networking, and HTTP request/response handling. Express.js is a
+              web framework that runs on top of Node.js, providing a set of
+              additional features for building web applications. It simplifies
+              the development of web applications by providing a set of
+              abstractions over the low-level HTTP APIs provided by Node.js.
+              Express.js includes a range of middleware that can be used to add
+              functionality such as authentication, routing, and handling of
+              HTTP requests and responses. In summary, Node.js is a platform
+              that allows developers to run JavaScript code on the server-side,
+              while Express.js is a web framework that makes it easier to build
+              web applications on top of Node.js by providing a set of
+              higher-level abstractions and features.
             </Card.Text>
           </Card.Body>
         </Card>
@@ -77,27 +101,38 @@ const Qustion = () => {
       <div>
         <Card>
           <Card.Body>
-            <Card.Title className="p-2">04. What is useMemo? </Card.Title>
+            <Card.Title className="p-2">
+              04. What is a custom hook, and why will you create a custom hook?{" "}
+            </Card.Title>
             <Card.Text className="p-2">
-              useMemo is a hook provided by React that memoizes the result of a
-              function call and caches it to avoid unnecessary re-computation.
-              It takes a function and an array of dependencies as arguments, and
-              returns the memoized value of the function. The function is only
-              re-computed if any of the dependencies have changed. This hook can
-              be used to optimize performance in situations where a function is
-              called frequently, but its result doesn't change often, by
-              avoiding expensive re-computations.
+              In React, a custom hook is a function that allows you to reuse
+              stateful logic across different components. It is a way to
+              abstract away complex logic from components, making them more
+              readable and maintainable. A custom hook typically consists of
+              pure functions that take some parameters and return data, usually
+              in the form of state variables and functions to manipulate that
+              state. These functions can be reused in multiple components,
+              allowing for a more modular and reusable codebase. Custom hooks
+              can be created for various purposes, such as managing state,
+              fetching data from an API, handling form input, and more. Creating
+              a custom hook allows you to extract reusable logic and makes it
+              easier to share that logic across multiple components. Some
+              benefits of using custom hooks include: Reusability: Custom hooks
+              allow you to write reusable code that can be used in multiple
+              components. Abstraction: Custom hooks abstract away complex logic,
+              making components simpler and more readable. Separation of
+              concerns: Custom hooks separate the logic of your application from
+              the UI, making it easier to test and maintain your code. Overall,
+              custom hooks are a powerful tool for creating reusable and
+              maintainable code in React.
             </Card.Text>
           </Card.Body>
         </Card>
       </div>
       <div className="qa_btn">
-      <Link
-        to="/"
-        className="back-btn"
-      >
-        Back to homepage
-      </Link>
+        <Link to="/" className="back-btn">
+          Back to homepage
+        </Link>
       </div>
     </div>
   );

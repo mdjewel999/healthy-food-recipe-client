@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "./RecipeCard.css";
 import "@smastrom/react-rating/style.css";
-import { FaEye } from "react-icons/fa";
+
 
 const RecipeCard = ({ recipe }) => {
   const {
@@ -136,7 +136,7 @@ const RecipeCard = ({ recipe }) => {
           )}
         </Card.Text>
 
-        <Card.Footer className="text-muted d-flex">
+        <Card.Footer className="card_footer text-muted d-flex">
           <div className="flex-grow-1 d-flex align-items-center">
             <Rating
               style={{ maxWidth: 150 }}
@@ -146,11 +146,11 @@ const RecipeCard = ({ recipe }) => {
             <span className="ms-2">{rating?.number}</span>
           </div>
           <div className="total_view">
-          <FaEye></FaEye> {total_view}
+          <span className="text-primary">Likes</span> {total_view}
         </div>
           <div>
             <Button
-              variant="primary"
+              variant="danger"
               className="btn-view"
               onClick={handleShowModal}
             >

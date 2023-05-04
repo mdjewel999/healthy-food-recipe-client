@@ -9,6 +9,7 @@ import Login from "../Login/Login/Login";
 import Register from "../Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Qustion from "../pages/Home/Home/Shared/NavigationBar/Qustion/Qustion";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
  
@@ -45,6 +46,7 @@ const router = createBrowserRouter([
       {
         path: ":id",
         element: <Category></Category>,
+        errorElement:<ErrorPage></ErrorPage>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/categories/${params.id}`),
       },

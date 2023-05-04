@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
+// import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from '../../../../../providers/AuthProvider';
 import './NavigationBar.css'
 
 const NavigationBar = () => {
 
   const { user , logOut} = useContext(AuthContext);
-
+console.log(user);
 
 const handleLogOut =() =>{
     logOut()
@@ -36,7 +36,8 @@ const handleLogOut =() =>{
             </Nav>
             <Nav>
               {user && (
-                <FaUserCircle className='person' style={{ fontSize: "2rem" }}></FaUserCircle>
+                <img className='rounded person'  src={user?.photoURL} alt="" />
+                // <FaUserCircle className='person' style={{ fontSize: "2rem" }}></FaUserCircle>
               )}
 
               {user ? (

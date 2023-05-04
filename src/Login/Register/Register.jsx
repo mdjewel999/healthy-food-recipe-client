@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
@@ -6,6 +6,9 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
 const {createUser} = useContext(AuthContext);
+const [passwordError, setPasswordError] = useState("");
+const [successMessage, setSuccessMessage] = useState("");
+
 const handleRegister = (event) => {
   event.preventDefault();
   const form = event.target;
@@ -15,8 +18,17 @@ const handleRegister = (event) => {
   const password = form.password.value;
 
   console.log(name, photo, email, password);
+
+// Check password length
+if (password.length < 6) {
+  setPasswordError("Password should be at least 6 characters long.");
+  return;
+}
+
+
   createUser(email, password)
     .then((result) => {
+      setSuccessMessage("create in successfully!");
       const createdUser = result.user;
       console.log(createdUser);
     })
@@ -76,6 +88,9 @@ const handleRegister = (event) => {
           name="accept"
           label={<>Accept <Link to="/terms">Terms and Conditions</Link> </>}
         />
+        <Form.Text className="text-success"></Form.Text>
+        <Form.Text className="text-success">{successMessage}</Form.Text>
+        <Form.Text className="text-danger">{passwordError}</Form.Text>
       </Form.Group>
       <Button variant="primary"  type="submit">
         Register
