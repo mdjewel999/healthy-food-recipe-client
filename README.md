@@ -1,15 +1,19 @@
-** Live Client_site Link: 
+** Live Client_site Link:   https://healthy-food-recipe-302b2.web.app/category/0
 
 
-** Live Server_site Link: 
+
+** Live Server_site Link:   https://healthy-food-recipe-server-mdjewel999.vercel.app/
 
 
-** GitHub Client_site Link:
+
+** GitHub Client_site Link:  https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-client-side-mdjewel999
 
 
-** GitHub Server_site Link:
+** GitHub Server_site Link:  https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-server-side-mdjewel999
 
-*********Project Details:
+
+
+*****Project Details:
 1. Clicking on all recipe chip will show the recipe cards of all the recipe men and on the right side the list of all the recipe men's name is given on clicking on their name will open their recipe card
 
 2.If you click on read more, you will see the recipe details. And below there is a button to come to the home page. If you click there, you will come to the home page.
