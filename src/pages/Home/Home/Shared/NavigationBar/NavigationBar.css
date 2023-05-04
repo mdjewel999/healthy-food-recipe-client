@@ -1,0 +1,39 @@
+.health{
+    color: brown;
+    font-weight: bold;
+    font-size: 30px;
+}
+.recipe{
+    color: brown;
+    font-weight: bold;
+    font-size: 30px;
+}
+.food{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+.navebar_list{
+    background-color: #131313;
+}
+.menu_link{
+    color: white;
+    font-size: 20px;
+}
+.menu_link:hover{
+    color: blueviolet;
+}
+.btn_login{
+    background-color: #A52A2A;
+    font-size: 20px;
+}
+.person{
+    color: #A52A2A;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-top: 7px;
+}
+.btn_login:hover{
+    background-color: #DFA756;
+    font-size: 20px;
+}

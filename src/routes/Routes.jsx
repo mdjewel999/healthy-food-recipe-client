@@ -8,8 +8,10 @@ import LoginLayout from "../layout/LoginLayout";
 import Login from "../Login/Login/Login";
 import Register from "../Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import Qustion from "../pages/Home/Home/Shared/NavigationBar/Qustion/Qustion";
 
 const router = createBrowserRouter([
+ 
   {
     path: "/",
     element: <LoginLayout></LoginLayout>,
@@ -26,8 +28,10 @@ const router = createBrowserRouter([
         path: "register",
         element: <Register></Register>,
       },
+      
     ],
   },
+  
 
   {
     path: "category",
@@ -58,6 +62,11 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path:'/qustion',
+    element:<Qustion></Qustion>
+  }
+ 
 ]);
 
 export default router;

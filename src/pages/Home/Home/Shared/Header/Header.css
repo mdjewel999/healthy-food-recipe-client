@@ -1,3 +1,9 @@
 .sliderImg{
     height: 500px;
 }
+.slider_title{
+    font-size: 40px;
+}
+.slider_para{
+    font-size: 20px;
+}

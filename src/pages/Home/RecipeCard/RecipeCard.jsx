@@ -161,7 +161,7 @@ const RecipeCard = ({ recipe }) => {
               <Modal.Header closeButton>
                 <Modal.Title>Name: {author?.name}</Modal.Title>
               </Modal.Header>
-              <Modal.Body>
+              <Modal.Body className="p-2">
                 <CardGroup>
                   <Card>
                     <Card.Img variant="top" src={thumbnail_url} />
@@ -169,11 +169,11 @@ const RecipeCard = ({ recipe }) => {
                       <Card.Title>Burger Items</Card.Title>
                       <Card.Text>
                         <ListGroup>
-                          <ListGroup.Item>1.Cheeseburge </ListGroup.Item>
-                          <ListGroup.Item>2.Hamburger</ListGroup.Item>
-                          <ListGroup.Item>3.Bacon Cheeseburger</ListGroup.Item>
-                          <ListGroup.Item>4.Mushroom Burger</ListGroup.Item>
-                          <ListGroup.Item>5.Hawaiian Burger</ListGroup.Item>
+                          <ListGroup.Item className="burger_list">1.Cheeseburge </ListGroup.Item> <br />
+                          <ListGroup.Item className="burger_list">2.Hamburger</ListGroup.Item> <br />
+                          <ListGroup.Item className="burger_list">3.Bacon Cheeseburger</ListGroup.Item> <br />
+                          <ListGroup.Item className="burger_list">4.Mushroom Burger</ListGroup.Item> <br />
+                          <ListGroup.Item className="burger_list">5.Hawaiian Burger</ListGroup.Item>
                         </ListGroup>
                       </Card.Text>
                     </Card.Body>
@@ -183,12 +183,15 @@ const RecipeCard = ({ recipe }) => {
                   <Card>
                     <Card.Img variant="top" src={thumbnail_url} />
                     <Card.Body>
-                      <Card.Title>Card title</Card.Title>
+                      <Card.Title>Chicken Tacos</Card.Title>
                       <Card.Text>
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This card has
-                        even longer content than the first to show that equal
-                        height action.
+                        <ListGroup>
+                          <ListGroup.Item className="burger_list_2">1.Cheeseburge </ListGroup.Item> <br />
+                          <ListGroup.Item className="burger_list_2">2.Hamburger</ListGroup.Item> <br />
+                          <ListGroup.Item className="burger_list_2">3.Bacon Cheeseburger</ListGroup.Item> <br />
+                          <ListGroup.Item className="burger_list_2">4.Mushroom Burger</ListGroup.Item> <br />
+                          <ListGroup.Item className="burger_list_2">5.Hawaiian Burger</ListGroup.Item>
+                        </ListGroup>
                       </Card.Text>
                     </Card.Body>
                    
@@ -196,7 +199,7 @@ const RecipeCard = ({ recipe }) => {
                 </CardGroup>
               </Modal.Body>
               <Modal.Footer>
-                <Button variant="secondary" onClick={handleCloseModal}>
+                <Button className="btn_close" variant="secondary" onClick={handleCloseModal}>
                   Close
                 </Button>
               </Modal.Footer>

@@ -2,15 +2,15 @@
     border: 2px solid rgb(85, 54, 198);
     margin-top: 30px;
     text-align: center;
-    background-color: #0B5ED7;
+    background-color: #A52A2A;
     border-radius: 10px;
     padding: 20px;
     color: white;
 }
 .chef_name{
-    border: 2px solid #0B5ED7;
+    border: 2px solid #A52A2A;
     text-align: center;
-    background-color: #0B5ED7;
+    background-color: #A52A2A;
     border-radius: 10px;
     padding: 10px;
     font-size: 25px;
@@ -18,5 +18,5 @@
     color: white;
 }
 .chef_name:hover{
-    background-color: rgb(181, 214, 203);
+    background-color: #DFA756;
 }

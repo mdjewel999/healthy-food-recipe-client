@@ -32,3 +32,16 @@
   justify-content: center;
   margin-top: 7px;
 }
+.burger_list{
+  border: 2px solid #DFA756;
+  border-radius: 10px;
+  background-color: #EFE0B0;
+}
+.burger_list_2{
+  border: 2px solid #DFA756;
+  border-radius: 10px;
+  background-color: #EFE0B0;
+}
+.btn_close{
+  background-color: #A52A2A;
+}
